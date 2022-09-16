@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="refresh" content="15; url=/index.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+  </head>
+  <body class="area">
+      <div style="text-align: center;">
+        <h1>Pe sub pielea ta esti</h1>
+        <br/>
+      <h4 class="confirmExit()"></h4>
+      </div>
+      <div class="context">
+    </div>
+      <div  >
+        <ul class="circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+        </ul>
+</div >
+      <script>
+        let btnRandom = document.querySelector('button');
+let result = document.querySelector('h4');
+let users = ['Arab sub acoperire']
+//let users = ['Bad Bitch','Arab sub acoperire','Karen','Fata perfectă','El stupido','Gras','Chinez =D','Ronaldo','creepy','o banană','talent','sloboz','Iubitor de imposibil','frustrare','capybara','gol','zâna mea','cartilaje','muschi','organe','figurant','imposibil','bad bitch','bad boy','mâncare pentru pământ','bombardier','capra vecinului','chiloți tanga','îndragostit','hot','răgălie','lapte si miere','dragoste si război','mare mafiot','băiatul lui tata','băiat fin','talent','baterie, baterie, foc ,foc', 'manelist','sexy','bunăciune','golan','sefu în toate', 'boss de boss','milionar','barosan','sefu la bani', 'mare barosan','talent','Florin Salam','rază de umbră','prinț','prințesă','broscoi','mare mafiot','o glumă','depresie','pustiu','regele manelelor','Tzanca','miliardar', 'ușă de biserică','viața bârfitorilor','moartea femeilor','moartea dușmanilor','frumusețe pură'];
+
+function getRandomNumber(min, max) {
+    let step1 = max - min + 1;
+    let step2 = Math.random() * step1;
+    let result = Math.floor(step2) + min;
+
+    return result;
+}
+    let index = getRandomNumber(0, users.length-1);
+    result.innerText = users[index];
+    
+    window.onbeforeunload = function() {
+        return "Dude, are you sure you want to leave? Think of the kittens!";
+    }
+    var bc = new BroadcastChannel('test_channel');
+
+bc.onmessage = function (ev) { 
+    if(ev.data && ev.data.url===window.location.href){
+       alert('You cannot open the same page in 2 tabs');
+    }
+}
+bc.postMessage(window.location.href);
+      </script>
+     
+<script src="script.js"></script>
+<footer>
+  <p>Vei fi redirecționat la pagina principală în <h3 id="count">15</h3> secunde</p>
+  <script type="text/javascript">
+var counter = 15;
+setInterval(function(){
+  counter--;
+  if(counter>= 0){
+    id= document.getElementById("count");
+    id.innerText = counter;
+  }
+}, 1000);
+  </script>
+  <h3>Mulțumesc!</h3>
+</footer>
+  </body>
+</html>
